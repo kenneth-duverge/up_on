@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "up_on",
-    "slug": "up_on",
+    "name": "Up-On",
+    "slug": "up-on",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,6 +29,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "Up.On is an app that tracks what a user does weekly, by gathering data from their social media, bank accounts, calendar.",
+    "githubUrl": "https://github.com/kenneth-duverge/up_on"
   }
 }

@@ -52,14 +52,13 @@ interface Props {
   navigation: any;
 }
 
-export default function TabTwoScreen({ navigation }: Props) {
+export default function Login({ navigation }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    // <KeyboardAwareScrollView keyboardShouldPersistTaps="always">
     <Container>
-      <Text>Login Screen.</Text>
+      <Text>Login</Text>
       <Input
         placeholder="E-mail"
         placeholderTextColor="#aaaaaa"
@@ -87,6 +86,5 @@ export default function TabTwoScreen({ navigation }: Props) {
         </SignUpLink>
       </SignUp>
     </Container>
-    // </KeyboardAwareScrollView>
   );
 }

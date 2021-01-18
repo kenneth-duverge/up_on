@@ -62,7 +62,7 @@ export default function Login({ navigation }: Props) {
       <Input
         placeholder="E-mail"
         placeholderTextColor="#aaaaaa"
-        onChangeText={(text) => setEmail(text)}
+        onChangeText={setEmail}
         value={email}
         underlineColorAndroid="transparent"
         autoCapitalize="none"
@@ -71,7 +71,7 @@ export default function Login({ navigation }: Props) {
         secureTextEntry
         placeholder="Password"
         placeholderTextColor="#aaaaaa"
-        onChangeText={(text) => setPassword(text)}
+        onChangeText={setPassword}
         value={password}
         underlineColorAndroid="transparent"
         autoCapitalize="none"

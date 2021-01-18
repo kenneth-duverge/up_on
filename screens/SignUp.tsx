@@ -94,7 +94,7 @@ export default function SignUp({ navigation }: Props) {
       </Button>
       <Login>
         Already got an account?{" "}
-        <SignUpLink onPress={() => navigation.navigate("Login")}>
+        <SignUpLink onPress={() => navigation.navigate("Questions")}>
           Login
         </SignUpLink>
       </Login>

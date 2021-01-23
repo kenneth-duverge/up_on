@@ -39,8 +39,8 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="SignUp" component={SignUp} /> */}
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="Questions" component={Questions} />
     </Stack.Navigator>
   );

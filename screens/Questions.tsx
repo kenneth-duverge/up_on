@@ -1,5 +1,11 @@
 import React, { useReducer, useCallback } from "react";
 import styled from "styled-components/native";
+import { AntDesign } from "@expo/vector-icons";
+
+import GreenShape from "../components/Shapes/GreenShape";
+import YellowShape from "../components/Shapes/YellowShape";
+import PinkShape from "../components/Shapes/PinkShape";
+import Pagination, { PaginationText } from "../components/Pagination";
 
 /**
  * The questions are what will be asked if user is signing up for the first time
@@ -26,14 +32,16 @@ type VerbData = {
   icon?: null;
   /** The next verb to be set */
   next: string;
+
+  id?: number;
 };
 
 const verbs: Record<Verb, VerbData> = {
-  smelled: { response: null, next: "tasted" },
-  tasted: { response: null, next: "felt" },
-  felt: { response: null, next: "heard" },
-  heard: { response: null, next: "seen" },
-  seen: { response: null, next: "smelled" },
+  smelled: { response: null, next: "tasted", id: 1 },
+  tasted: { response: null, next: "felt", id: 2 },
+  felt: { response: null, next: "heard", id: 3 },
+  heard: { response: null, next: "seen", id: 4 },
+  seen: { response: null, next: "smelled", id: 5 },
 };
 
 interface State {
@@ -86,6 +94,8 @@ const initialState: State = {
   verbs,
 };
 
+const ICON_SIZE = 16;
+
 /** @TODO rename once question interface is moved to it's own component */
 function QuestionComponent() {
   /** @TODO move useReducer to it's own context */
@@ -119,31 +129,34 @@ function QuestionComponent() {
 
   return (
     <Container>
-      <Text>Have you {state.verb.name} something new?</Text>
+      <GreenShape />
+      <YellowShape />
+      <PinkShape />
+      <Content>
+        <Text>Have you {state.verb.name} something new?</Text>
+        <Pagination />
+        <PaginationText>{state.verb.data.id} / 5</PaginationText>
+      </Content>
       <ButtonContainer>
         <Yes onPress={handleYes}>
+          <AntDesign name="up" size={ICON_SIZE} color="#fadc9f" />
           <ButtonText>Yes</ButtonText>
         </Yes>
         <No onPress={handleNo}>
+          <AntDesign name="down" size={ICON_SIZE} color="#f19795" />
           <ButtonText>No</ButtonText>
         </No>
       </ButtonContainer>
-      {Object.keys(state.verbs).map((verb) => {
-        return (
-          <DebugView key={`debug-${verb}`}>
-            <DebugText>
-              Name: {verb} - Response:{" "}
-              {state.verbs[verb].response ? "Yes" : "No"}
-            </DebugText>
-          </DebugView>
-        );
-      })}
     </Container>
   );
 }
 
-const DebugView = styled.View``;
-const DebugText = styled.Text``;
+const Content = styled.View`
+  display: flex;
+  height: 350px;
+
+  bottom: 50px;
+`;
 
 const Button = styled.TouchableOpacity`
   border-radius: 50px;
@@ -159,22 +172,16 @@ const Button = styled.TouchableOpacity`
   border-style: solid;
 `;
 
-const ButtonText = styled.Text`
-  /* display: flex;
-  justify-content: center;
-
-  align-items: center; */
-`;
+const ButtonText = styled.Text``;
 
 const ButtonContainer = styled.View`
-  height: 250px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-end;
 
-  padding-right: 20px;
+  position: absolute;
+  bottom: 20%;
+  right: 20px;
 `;
 
 const Yes = styled(Button)`
@@ -185,10 +192,6 @@ const No = styled(Button)`
   border-color: #f19795;
   margin-top: 20px;
 `;
-
-function Pagination() {}
-
-const StyledPagination = styled.View``;
 
 const Container = styled.View`
   width: 100%;
@@ -204,6 +207,7 @@ const Text = styled.Text`
   width: 210px;
 
   margin-left: 20px;
+  margin-top: 40px;
   text-transform: capitalize;
 `;
 

@@ -10,6 +10,7 @@ const Container = styled.SafeAreaView`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background-color: #ccc; */
 `;
 
 const Text = styled.Text`

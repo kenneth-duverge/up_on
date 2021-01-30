@@ -77,7 +77,7 @@ export default function Login({ navigation }: Props) {
         underlineColorAndroid="transparent"
         autoCapitalize="none"
       />
-      <Button onPress={() => {}}>
+      <Button onPress={() => navigation.navigate("Landing")}>
         <WhiteText>Log in</WhiteText>
       </Button>
       <SignUp>

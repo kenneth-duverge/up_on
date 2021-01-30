@@ -15,6 +15,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
 import Questions from "../screens/Questions";
+import Landing from "../screens/Landing";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -39,6 +40,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Landing" component={Landing} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="Questions" component={Questions} />

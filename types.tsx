@@ -2,6 +2,7 @@ export type RootStackParamList = {
   Login: undefined;
   SignUp: undefined;
   Questions: undefined;
+  Landing: undefined;
 };
 
 export type BottomTabParamList = {

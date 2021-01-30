@@ -1,7 +1,7 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-const PinkShape = () => (
+export const Pink = () => (
   <Svg
     width="797"
     height="895"
@@ -18,5 +18,3 @@ const PinkShape = () => (
     />
   </Svg>
 );
-
-export default PinkShape;

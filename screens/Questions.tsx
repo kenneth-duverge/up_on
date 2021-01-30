@@ -2,9 +2,7 @@ import React, { useReducer, useCallback } from "react";
 import styled from "styled-components/native";
 import { AntDesign } from "@expo/vector-icons";
 
-import GreenShape from "../components/Shapes/GreenShape";
-import YellowShape from "../components/Shapes/YellowShape";
-import PinkShape from "../components/Shapes/PinkShape";
+import * as Shapes from "../components/Shapes";
 import Pagination, { PaginationText } from "../components/Pagination";
 
 /**
@@ -129,9 +127,9 @@ function QuestionComponent() {
 
   return (
     <Container>
-      <GreenShape />
-      <YellowShape />
-      <PinkShape />
+      <Shapes.Green />
+      <Shapes.Yellow />
+      <Shapes.Pink />
       <Content>
         <Text>Have you {state.verb.name} something new?</Text>
         <Pagination />

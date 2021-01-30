@@ -1,7 +1,7 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-const GreenShape = () => (
+export const Green = () => (
   <Svg
     width="1125"
     height="646"
@@ -18,5 +18,3 @@ const GreenShape = () => (
     />
   </Svg>
 );
-
-export default GreenShape;
